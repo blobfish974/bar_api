@@ -21,8 +21,8 @@ app.use(router)
 
 app.get("/", (req, res) => {
   console.log("Responding to root route")
-  //res.send("Hello from ROOOOOT")
-  res.send(barData.data);
+  res.send("Hello from ROOOOOT")
+  //res.send(barData.data);
 })
 
 app.post("/new_bar", (req, res) => {
