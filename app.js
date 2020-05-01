@@ -6,6 +6,8 @@ const mysql = require('mysql')
 
 const bodyParser = require('body-parser')
 
+const barData = require('./data/barData.js')
+
 app.use(bodyParser.urlencoded({extended: false}))
 
 
@@ -19,7 +21,14 @@ app.use(router)
 
 app.get("/", (req, res) => {
   console.log("Responding to root route")
-  res.send("Hello from ROOOOOT")
+  //res.send("Hello from ROOOOOT")
+  res.send(barData.data);
+})
+
+app.post("/new_bar", (req, res) => {
+  console.log("Post query")
+  //res.send("Hello from ROOOOOT")
+  res.send("Post query");
 })
 
 const PORT = process.env.PORT || 3003
